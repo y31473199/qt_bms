@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/btn">
+        <file>videoBtn_C.png</file>
+        <file>videoBtn.png</file>
+        <file>troubleBtn.png</file>
+        <file>title.png</file>
+        <file>homeBtn.png</file>
+        <file>closeBtn.png</file>
+        <file>previousBtn.png</file>
+        <file>stopBtn.png</file>
+        <file>playBtn.png</file>
+        <file>nextBtn.png</file>
+        <file>dischargeBtnPushed.jpg</file>
+        <file>discharge.jpg</file>
+        <file>chargeBtnPushed.jpg</file>
+        <file>chargeBtn.jpg</file>
+        <file>voltage_btn_pushed.png</file>
+        <file>voltage_btn.png</file>
+        <file>temper_btn_pushed.png</file>
+        <file>temper_btn.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>loginbackground.png</file>
+        <file>homeBackground.png</file>
+        <file>whitebackground.png</file>
+        <file>blackbackground.png</file>
+        <file>faultBackground.png</file>
+    </qresource>
+    <qresource prefix="/start">
+        <file>zzicon.png</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>stopicon.png</file>
+        <file>pauseIcon.png</file>
+        <file>shortout.png</file>
+        <file>overshoot.png</file>
+        <file>overfall.png</file>
+        <file>opencircuit.png</file>
+        <file>normal.png</file>
+        <file>hightem.png</file>
+        <file>zz.ico</file>
+    </qresource>
+    <qresource prefix="/res">
+        <file>charge.gif</file>
+        <file>charge_movie.gif</file>
+    </qresource>
+</RCC>

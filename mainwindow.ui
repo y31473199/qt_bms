@@ -1,0 +1,1707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="faultBtn">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>0</y>
+      <width>311</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/troubleBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="meterBtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>311</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/homeBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="mediaBtn">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>0</y>
+      <width>311</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/videoBtn.png);
+clicked{border-image}:url(:/btn/videoBtn_C.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="title">
+    <property name="geometry">
+     <rect>
+      <x>1240</x>
+      <y>0</y>
+      <width>681</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/title.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="closeBtn">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>0</y>
+      <width>311</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/closeBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_2">
+    <property name="geometry">
+     <rect>
+      <x>245</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_4">
+    <property name="geometry">
+     <rect>
+      <x>315</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_5">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_6">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_7">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_8">
+    <property name="geometry">
+     <rect>
+      <x>455</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_9">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_10">
+    <property name="geometry">
+     <rect>
+      <x>525</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_11">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_12">
+    <property name="geometry">
+     <rect>
+      <x>595</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="chargeBtn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>930</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/chargeBtn.jpg);
+border:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dischargeBtn">
+    <property name="geometry">
+     <rect>
+      <x>1760</x>
+      <y>940</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/discharge.jpg);border:none</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="battery_num1_12">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>600</y>
+      <width>411</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>1         2          3          4          5         6         7          8          9         10        11       12</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bat_title_1">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>390</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(115, 210, 22)</string>
+    </property>
+    <property name="text">
+     <string>电池组：1~12</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bat_title_2">
+    <property name="geometry">
+     <rect>
+      <x>1410</x>
+      <y>400</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(115, 210, 22)</string>
+    </property>
+    <property name="text">
+     <string>电池组：13~24</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="temperBtn">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>780</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image:url(:/btn/voltage_btn.png);border:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="voltageBtn">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>780</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image:url(:/btn/temper_btn.png);border:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>330</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>最高温度：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_2">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>390</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>总电压：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_3">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>590</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>故障状态：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_4">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>450</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>电流：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_5">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>510</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>SOC：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_6">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>330</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+    </property>
+    <property name="text">
+     <string>35℃</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_7">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>510</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+    </property>
+    <property name="text">
+     <string>80%</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_8">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>450</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+    </property>
+    <property name="text">
+     <string>5A</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_9">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>390</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+    </property>
+    <property name="text">
+     <string>78.5V</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="charge_movie">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>330</y>
+      <width>161</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_13">
+    <property name="geometry">
+     <rect>
+      <x>1285</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_14">
+    <property name="geometry">
+     <rect>
+      <x>1355</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_15">
+    <property name="geometry">
+     <rect>
+      <x>1670</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="battery_num1_13">
+    <property name="geometry">
+     <rect>
+      <x>1295</x>
+      <y>600</y>
+      <width>411</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>13      14        15        16       17        18        19       20        21        22       23        24</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_16">
+    <property name="geometry">
+     <rect>
+      <x>1565</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_17">
+    <property name="geometry">
+     <rect>
+      <x>1495</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_18">
+    <property name="geometry">
+     <rect>
+      <x>1425</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_19">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_20">
+    <property name="geometry">
+     <rect>
+      <x>1320</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_21">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_22">
+    <property name="geometry">
+     <rect>
+      <x>1460</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_23">
+    <property name="geometry">
+     <rect>
+      <x>1635</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chargeing_24">
+    <property name="geometry">
+     <rect>
+      <x>1530</x>
+      <y>534</y>
+      <width>25</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>470</y>
+      <width>71</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>电压/伏特(v)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>580</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>550</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>530</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>510</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_2">
+    <property name="geometry">
+     <rect>
+      <x>245</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_4">
+    <property name="geometry">
+     <rect>
+      <x>315</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_5">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_6">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_7">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_8">
+    <property name="geometry">
+     <rect>
+      <x>455</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_9">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_10">
+    <property name="geometry">
+     <rect>
+      <x>525</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_11">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_12">
+    <property name="geometry">
+     <rect>
+      <x>595</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_171">
+    <property name="geometry">
+     <rect>
+      <x>1425</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_131">
+    <property name="geometry">
+     <rect>
+      <x>1285</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_231">
+    <property name="geometry">
+     <rect>
+      <x>1635</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_181">
+    <property name="geometry">
+     <rect>
+      <x>1460</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_191">
+    <property name="geometry">
+     <rect>
+      <x>1495</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_201">
+    <property name="geometry">
+     <rect>
+      <x>1530</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_211">
+    <property name="geometry">
+     <rect>
+      <x>1565</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_241">
+    <property name="geometry">
+     <rect>
+      <x>1670</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_141">
+    <property name="geometry">
+     <rect>
+      <x>1320</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_151">
+    <property name="geometry">
+     <rect>
+      <x>1355</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_161">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fute_221">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
+      <y>490</y>
+      <width>28</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 0, 0);
+color:white</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1300</x>
+      <y>460</y>
+      <width>71</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>电压/伏特(v)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>590</y>
+      <width>50</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="temp_title_10">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>590</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border:2px groove gray;border-radius:10px;padding:2px 4px;
+color:red;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>1920</x>
+      <y>959</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>120</y>
+      <width>1920</width>
+      <height>959</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image:url(:/background/homeBackground.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tem_value">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>468</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tem_value_2">
+    <property name="geometry">
+     <rect>
+      <x>1370</x>
+      <y>460</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_9</zorder>
+   <zorder>faultBtn</zorder>
+   <zorder>meterBtn</zorder>
+   <zorder>mediaBtn</zorder>
+   <zorder>title</zorder>
+   <zorder>closeBtn</zorder>
+   <zorder>chargeing</zorder>
+   <zorder>chargeing_2</zorder>
+   <zorder>chargeing_3</zorder>
+   <zorder>chargeing_4</zorder>
+   <zorder>chargeing_5</zorder>
+   <zorder>chargeing_6</zorder>
+   <zorder>chargeing_7</zorder>
+   <zorder>chargeing_8</zorder>
+   <zorder>chargeing_9</zorder>
+   <zorder>chargeing_10</zorder>
+   <zorder>chargeing_11</zorder>
+   <zorder>chargeing_12</zorder>
+   <zorder>chargeBtn</zorder>
+   <zorder>dischargeBtn</zorder>
+   <zorder>bat_title_1</zorder>
+   <zorder>bat_title_2</zorder>
+   <zorder>battery_num1_12</zorder>
+   <zorder>temperBtn</zorder>
+   <zorder>voltageBtn</zorder>
+   <zorder>temp_title</zorder>
+   <zorder>temp_title_2</zorder>
+   <zorder>temp_title_3</zorder>
+   <zorder>temp_title_4</zorder>
+   <zorder>temp_title_5</zorder>
+   <zorder>temp_title_6</zorder>
+   <zorder>temp_title_7</zorder>
+   <zorder>temp_title_8</zorder>
+   <zorder>temp_title_9</zorder>
+   <zorder>charge_movie</zorder>
+   <zorder>chargeing_13</zorder>
+   <zorder>chargeing_14</zorder>
+   <zorder>chargeing_15</zorder>
+   <zorder>battery_num1_13</zorder>
+   <zorder>chargeing_16</zorder>
+   <zorder>chargeing_17</zorder>
+   <zorder>chargeing_18</zorder>
+   <zorder>chargeing_19</zorder>
+   <zorder>chargeing_20</zorder>
+   <zorder>chargeing_21</zorder>
+   <zorder>chargeing_22</zorder>
+   <zorder>chargeing_23</zorder>
+   <zorder>chargeing_24</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>fute_1</zorder>
+   <zorder>fute_2</zorder>
+   <zorder>fute_3</zorder>
+   <zorder>fute_4</zorder>
+   <zorder>fute_5</zorder>
+   <zorder>fute_6</zorder>
+   <zorder>fute_7</zorder>
+   <zorder>fute_8</zorder>
+   <zorder>fute_9</zorder>
+   <zorder>fute_10</zorder>
+   <zorder>fute_11</zorder>
+   <zorder>fute_12</zorder>
+   <zorder>fute_171</zorder>
+   <zorder>fute_131</zorder>
+   <zorder>fute_231</zorder>
+   <zorder>fute_181</zorder>
+   <zorder>fute_191</zorder>
+   <zorder>fute_201</zorder>
+   <zorder>fute_211</zorder>
+   <zorder>fute_241</zorder>
+   <zorder>fute_141</zorder>
+   <zorder>fute_151</zorder>
+   <zorder>fute_161</zorder>
+   <zorder>fute_221</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>temp_title_10</zorder>
+   <zorder>label</zorder>
+   <zorder>tem_value</zorder>
+   <zorder>tem_value_2</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>login</class>
+ <widget class="QWidget" name="login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLineEdit" name="password">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>500</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>登录</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="meterBtn">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/homeBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mediaBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/videoBtn.png);
+presser{border-image}:url(:/btn/videoBtn_C.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="user">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>440</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>用户名</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loginBG">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>120</y>
+     <width>1920</width>
+     <height>959</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/background/loginbackground.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="account">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>560</y>
+     <width>111</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(71, 231, 163);
+border:none;border:2px groove gray;border-radius:10px;padding:2px 2px;</string>
+   </property>
+   <property name="text">
+    <string>学生入口</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="submit">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>600</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(30, 191, 238);
+border:none;border:2px groove gray;border-radius:10px;padding:2px 4px;</string>
+   </property>
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="faultBtn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/troubleBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeBtn">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/closeBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>0</y>
+     <width>681</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/title.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>loginBG</zorder>
+  <zorder>password</zorder>
+  <zorder>meterBtn</zorder>
+  <zorder>mediaBtn</zorder>
+  <zorder>user</zorder>
+  <zorder>account</zorder>
+  <zorder>submit</zorder>
+  <zorder>faultBtn</zorder>
+  <zorder>closeBtn</zorder>
+  <zorder>pushButton_4</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>user</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>account</tabstop>
+  <tabstop>submit</tabstop>
+  <tabstop>faultBtn</tabstop>
+  <tabstop>meterBtn</tabstop>
+  <tabstop>closeBtn</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>mediaBtn</tabstop>
+ </tabstops>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/btn">
+        <file>videoBtn_C.png</file>
+        <file>videoBtn.png</file>
+        <file>troubleBtn.png</file>
+        <file>title.png</file>
+        <file>homeBtn.png</file>
+        <file>closeBtn.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>homeBackground.png</file>
+        <file>login.png</file>
+    </qresource>
+</RCC>

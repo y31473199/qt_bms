@@ -1,0 +1,45 @@
+#include "media.h"
+#include "ui_media.h"
+#include "qmessagebox.h"
+#include "mainwindow.h"
+#include "fault.h"
+
+media::media(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::media)
+{
+    ui->setupUi(this);
+}
+
+media::~media()
+{
+    delete ui;
+}
+
+//关闭按钮点击事件
+void media::on_closeBtn_clicked(bool checked)
+{
+    if (!(QMessageBox::information(this,tr("请您认真考虑"),tr("退出本程序吗 ?"),tr("退出"),tr("取消")))){
+        QApplication* app;
+        app->exit(0);
+    }
+}
+
+//仪表按钮点击事件
+void media::on_meterBtn_clicked(bool checked)
+{
+    MainWindow *mw = new MainWindow(this);
+    mw->show();
+}
+
+//故障按钮点击事件
+void media::on_faultBtn_clicked(bool checked)
+{
+    fault *fw = new fault(this);
+    fw->show();
+}
+
+void media::on_playBtn_clicked(bool checked)
+{
+
+}

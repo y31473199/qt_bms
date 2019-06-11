@@ -1,0 +1,2843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fault</class>
+ <widget class="QWidget" name="fault">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="closeBtn">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/closeBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>0</y>
+     <width>681</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/title.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mediaBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/videoBtn.png);
+presser{border-image}:url(:/btn/videoBtn_C.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="meterBtn">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/homeBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="faultBtn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/troubleBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_25">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>620</y>
+     <width>60</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>120</y>
+     <width>1920</width>
+     <height>959</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑 Light</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url(:/background/faultBackground.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="fault_stat">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>1010</y>
+     <width>240</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 255, 127, 255), stop:0.113636 rgba(170, 255, 255, 255), stop:0.238636 rgba(34, 166, 248, 255), stop:0.494318 rgba(0, 255, 207, 255), stop:0.767045 rgba(34, 166, 248, 255), stop:0.892045 rgba(170, 255, 255, 255), stop:1 rgba(85, 255, 127, 255))</string>
+   </property>
+   <property name="text">
+    <string>已设置故障：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="submit_btn">
+   <property name="geometry">
+    <rect>
+     <x>1390</x>
+     <y>1010</y>
+     <width>240</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(9, 41, 4, 255), stop:0.085 rgba(34, 166, 248, 255), stop:0.261364 rgba(170, 255, 255, 255), stop:0.267045 rgba(170, 255, 255, 255), stop:0.6875 rgba(170, 255, 255, 255), stop:0.885 rgba(34, 166, 248, 255), stop:1 rgba(0, 0, 0, 255))</string>
+   </property>
+   <property name="text">
+    <string>试题发布</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="test_time_title">
+   <property name="geometry">
+    <rect>
+     <x>1480</x>
+     <y>940</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>考试时间设置：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="time_set">
+   <property name="geometry">
+    <rect>
+     <x>1620</x>
+     <y>940</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="test_second">
+   <property name="geometry">
+    <rect>
+     <x>1680</x>
+     <y>940</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>分钟</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bms_laber">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>250</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>BMS电源   ：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bms_fault">
+   <property name="geometry">
+    <rect>
+     <x>1540</x>
+     <y>250</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="batout_fault">
+   <property name="geometry">
+    <rect>
+     <x>1540</x>
+     <y>300</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="batout_labet">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>300</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>放电继电器 :</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="batin_fault">
+   <property name="geometry">
+    <rect>
+     <x>1540</x>
+     <y>350</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="batin_laber">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>350</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>充电继电器 :</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="can_bus_fault">
+   <property name="geometry">
+    <rect>
+     <x>1540</x>
+     <y>400</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="can_bus_laber">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>400</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>CAN-BUS  ：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="time_use">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>1010</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="time_back">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>1010</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="set_fault_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>239</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>故障设置</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="read_fault_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>290</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>读故障码</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="score_add_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>340</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>分数统计</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clear_fault_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>390</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>故障清除</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="data_reset_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>440</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>数据重置</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="background_info_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>490</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>背景资料</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="logout_btn">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>540</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>退出登录</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="battery_20">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>545</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组20：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="battery_21">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>636</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组21：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="battery_22">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>726</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组22：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="battery_23">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>816</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组23：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="battery_24">
+   <property name="geometry">
+    <rect>
+     <x>1131</x>
+     <y>910</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组24：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_20">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>531</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_21">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>623</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_22">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>715</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_23">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>807</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_24">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>899</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_1">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>260</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组1：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_1">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>260</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-align:center</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>350</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组2：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_2">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>350</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon"> 
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_3">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>445</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组3：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_3">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>439</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_4">
+   <property name="geometry">
+    <rect>
+     <x>393</x>
+     <y>535</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组4：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_4">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>531</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_5">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>630</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组5：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_5">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>623</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_6">
+   <property name="geometry">
+    <rect>
+     <x>393</x>
+     <y>720</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组6：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_6">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>715</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_7">
+   <property name="geometry">
+    <rect>
+     <x>393</x>
+     <y>815</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组7：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_7">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>807</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_8">
+   <property name="geometry">
+    <rect>
+     <x>393</x>
+     <y>905</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组8：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_8">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>899</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_9">
+   <property name="geometry">
+    <rect>
+     <x>734</x>
+     <y>265</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组9：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_9">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>255</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_10">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>345</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组10：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_10">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>347</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_11">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>445</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组11：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_11">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>439</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_12">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>545</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组12：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_12">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>531</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_13">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>635</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组13：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_13">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>623</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_14">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>725</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组14：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_14">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>715</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_15">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>820</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组15：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_15">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>807</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_16">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>910</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组16：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_16">
+   <property name="geometry">
+    <rect>
+     <x>821</x>
+     <y>899</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_17">
+   <property name="geometry">
+    <rect>
+     <x>1131</x>
+     <y>266</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组17：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_17">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>255</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_18">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>356</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组18：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_18">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>347</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="battery_19">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>455</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>电池组19：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bty_fault_19">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>439</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>正常</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/normal.png</normaloff>:/icon/normal.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>过放</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overfall.png</normaloff>:/icon/overfall.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漏电</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/overshoot.png</normaloff>:/icon/overshoot.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>高温</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/hightem.png</normaloff>:/icon/hightem.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>短路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/shortout.png</normaloff>:/icon/shortout.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>断路</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/icon/opencircuit.png</normaloff>:/icon/opencircuit.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>closeBtn</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>mediaBtn</zorder>
+  <zorder>meterBtn</zorder>
+  <zorder>faultBtn</zorder>
+  <zorder>label_25</zorder>
+  <zorder>fault_stat</zorder>
+  <zorder>submit_btn</zorder>
+  <zorder>test_time_title</zorder>
+  <zorder>time_set</zorder>
+  <zorder>test_second</zorder>
+  <zorder>bms_laber</zorder>
+  <zorder>bms_fault</zorder>
+  <zorder>batout_fault</zorder>
+  <zorder>batout_labet</zorder>
+  <zorder>batin_fault</zorder>
+  <zorder>batin_laber</zorder>
+  <zorder>can_bus_fault</zorder>
+  <zorder>can_bus_laber</zorder>
+  <zorder>time_use</zorder>
+  <zorder>time_back</zorder>
+  <zorder>set_fault_btn</zorder>
+  <zorder>read_fault_btn</zorder>
+  <zorder>score_add_btn</zorder>
+  <zorder>clear_fault_btn</zorder>
+  <zorder>data_reset_btn</zorder>
+  <zorder>background_info_btn</zorder>
+  <zorder>logout_btn</zorder>
+  <zorder>battery_1</zorder>
+  <zorder>bty_fault_1</zorder>
+  <zorder>battery_2</zorder>
+  <zorder>bty_fault_2</zorder>
+  <zorder>battery_3</zorder>
+  <zorder>bty_fault_3</zorder>
+  <zorder>battery_4</zorder>
+  <zorder>bty_fault_4</zorder>
+  <zorder>battery_5</zorder>
+  <zorder>bty_fault_5</zorder>
+  <zorder>battery_6</zorder>
+  <zorder>bty_fault_6</zorder>
+  <zorder>battery_7</zorder>
+  <zorder>bty_fault_7</zorder>
+  <zorder>battery_8</zorder>
+  <zorder>bty_fault_8</zorder>
+  <zorder>battery_9</zorder>
+  <zorder>bty_fault_9</zorder>
+  <zorder>battery_10</zorder>
+  <zorder>bty_fault_10</zorder>
+  <zorder>battery_11</zorder>
+  <zorder>bty_fault_11</zorder>
+  <zorder>battery_12</zorder>
+  <zorder>bty_fault_12</zorder>
+  <zorder>battery_13</zorder>
+  <zorder>bty_fault_13</zorder>
+  <zorder>battery_14</zorder>
+  <zorder>bty_fault_14</zorder>
+  <zorder>battery_15</zorder>
+  <zorder>bty_fault_15</zorder>
+  <zorder>battery_16</zorder>
+  <zorder>bty_fault_16</zorder>
+  <zorder>battery_17</zorder>
+  <zorder>bty_fault_17</zorder>
+  <zorder>battery_18</zorder>
+  <zorder>bty_fault_18</zorder>
+  <zorder>battery_19</zorder>
+  <zorder>bty_fault_19</zorder>
+  <zorder>bty_fault_20</zorder>
+  <zorder>bty_fault_21</zorder>
+  <zorder>bty_fault_22</zorder>
+  <zorder>bty_fault_23</zorder>
+  <zorder>bty_fault_24</zorder>
+  <zorder>battery_20</zorder>
+  <zorder>battery_21</zorder>
+  <zorder>battery_22</zorder>
+  <zorder>battery_23</zorder>
+  <zorder>battery_24</zorder>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

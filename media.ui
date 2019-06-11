@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>media</class>
+ <widget class="QWidget" name="media">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="faultBtn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/troubleBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>0</y>
+     <width>681</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/title.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mediaBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/videoBtn.png);
+clicked{border-image}:url(:/btn/videoBtn_C.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="meterBtn">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/homeBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeBtn">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>0</y>
+     <width>311</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image:url(:/btn/closeBtn.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mediaBG">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>121</y>
+     <width>1920</width>
+     <height>959</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/background/whitebackground.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QSlider" name="seek">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>870</y>
+     <width>1251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>920</y>
+     <width>1001</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QPushButton" name="previousBtn">
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/previousBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="playBtn">
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/playBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nextBtn">
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/nextBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopBtn">
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/btn/stopBtn.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="video">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>120</y>
+     <width>1541</width>
+     <height>741</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listVideo">
+   <property name="geometry">
+    <rect>
+     <x>1540</x>
+     <y>160</y>
+     <width>391</width>
+     <height>921</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDial" name="dial">
+   <property name="geometry">
+    <rect>
+     <x>1210</x>
+     <y>900</y>
+     <width>191</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="singleStep">
+    <number>10</number>
+   </property>
+   <property name="value">
+    <number>50</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="v_list_title">
+   <property name="geometry">
+    <rect>
+     <x>1549</x>
+     <y>117</y>
+     <width>371</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>媒体资源库：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>870</y>
+     <width>60</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>进度条：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>1030</y>
+     <width>60</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>音量：0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>1340</x>
+     <y>1030</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>音量：100</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="time_title">
+   <property name="geometry">
+    <rect>
+     <x>1340</x>
+     <y>870</y>
+     <width>47</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>时间：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="time_labet">
+   <property name="geometry">
+    <rect>
+     <x>1380</x>
+     <y>870</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>mediaBG</zorder>
+  <zorder>faultBtn</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>mediaBtn</zorder>
+  <zorder>meterBtn</zorder>
+  <zorder>closeBtn</zorder>
+  <zorder>seek</zorder>
+  <zorder>splitter</zorder>
+  <zorder>video</zorder>
+  <zorder>listVideo</zorder>
+  <zorder>dial</zorder>
+  <zorder>v_list_title</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>time_title</zorder>
+  <zorder>time_labet</zorder>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
