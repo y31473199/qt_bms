@@ -5,6 +5,7 @@
 #include <QModbusDataUnit>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QModbusRtuSerialMaster>
 
 QT_BEGIN_NAMESPACE
 
@@ -23,6 +24,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void connentModbus();
 
 private slots:
     void on_faultBtn_clicked();
@@ -47,18 +49,39 @@ private slots:
 
     void do_conn();
 
+    void check_modbus();
+
+    void check_fault(QString);
+
+    void changeWindow();
+
+    void on_pushButton_clicked();
+
 private:
     QMovie *movie;
+    QMovie *charge_movie;
     QTimer *con_button;
     QTimer *timer;
     Ui::MainWindow *ui;
+    QSqlDatabase db;
     bool charge_state = false;
     bool discharge_state = false;
     QModbusClient *modbusDevice;
     QModbusDataUnit readUnit = QModbusDataUnit(QModbusDataUnit::HoldingRegisters ,0,87);
     QModbusDataUnit writeUnit = QModbusDataUnit(QModbusDataUnit::Coils,0,4);
+    QModbusDataUnit writeUnitpress = QModbusDataUnit(QModbusDataUnit::Coils,0,4);
     bool temp_state = false;
     bool vol_state = false;
+    bool started = false;
+    bool timerStarted = false;
+    QString fault_1;
+    QString fault_2;
+    QString fault_3;
+    QString fault_4;
+    QString fault_5;
+    QString fault_6;
+    bool acceptRun = false;
+    QModbusReply *replyreade;
 
 };
 

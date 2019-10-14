@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <login.h>
 #include <QModbusDataUnit>
+#include <QtSerialPort/QSerialPort>
+#include <QRCodeGenerator.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +30,9 @@ public:
     QString command_factory(QString index);
     void Init();
     bool check_fault(int index,bool &on_off);
+signals:
+    void showScoreQRCodeString(QString);
+
 private slots:
     void on_closeBtn_clicked();
 
@@ -111,16 +116,24 @@ private slots:
 
     void showTimelimit();
 
+
+    void on_set_fault_btn_clicked();
+
 private:
     void serialConnect();
     void modbusPlcConnect();
     QModbusClient *modbusDevice;
     QModbusDataUnit writeUnit = QModbusDataUnit(QModbusDataUnit::Coils,0,4);
     Ui::fault *ui;
+    QString user;
     int fault_stat = 0;
     login *lw ;
     int time_back;
     QTimer *timer;
+    QSerialPort *serial;
+    CQR_Encode qrEncode;
+    bool successfulEncoding;
+    int encodeImageSize;
 
 
 };

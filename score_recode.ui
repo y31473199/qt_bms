@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>score_recode</class>
+ <widget class="QDialog" name="score_recode">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>688</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QListWidget" name="gaishupian">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>231</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01新能源汽车参数</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02新能源汽车组合仪表</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03纯电动汽车动力传输工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04行星齿轮运转工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>05燃料电池工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>06新能源汽车外观特征</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>07比亚迪E6新能源汽车主要高压部件介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>08荣威新能源汽车标牌介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>09新能源汽车仪表饰灯介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10比亚迪E6电动汽车部件介绍</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>概述篇：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>0</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>高压防护篇：</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="gaoyafanghupian">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>50</y>
+     <width>231</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01新能源汽车参数</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02新能源汽车组合仪表</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03纯电动汽车动力传输工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04行星齿轮运转工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>05燃料电池工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>06新能源汽车外观特征</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>07比亚迪E6新能源汽车主要高压部件介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>08荣威新能源汽车标牌介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>09新能源汽车仪表饰灯介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10比亚迪E6电动汽车部件介绍</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>270</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>动力系统篇：</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="gaishupian_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>320</y>
+     <width>231</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01新能源汽车参数</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02新能源汽车组合仪表</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03纯电动汽车动力传输工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04行星齿轮运转工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>05燃料电池工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>06新能源汽车外观特征</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>07比亚迪E6新能源汽车主要高压部件介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>08荣威新能源汽车标牌介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>09新能源汽车仪表饰灯介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10比亚迪E6电动汽车部件介绍</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>270</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>其它电器篇：</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="gaishupian_3">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>320</y>
+     <width>231</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01新能源汽车参数</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02新能源汽车组合仪表</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03纯电动汽车动力传输工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04行星齿轮运转工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>05燃料电池工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>06新能源汽车外观特征</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>07比亚迪E6新能源汽车主要高压部件介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>08荣威新能源汽车标牌介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>09新能源汽车仪表饰灯介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10比亚迪E6电动汽车部件介绍</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>0</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>维修诊断篇：</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="gaishupian_4">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>50</y>
+     <width>231</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01新能源汽车参数</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02新能源汽车组合仪表</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03纯电动汽车动力传输工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04行星齿轮运转工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>05燃料电池工作原理</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>06新能源汽车外观特征</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>07比亚迪E6新能源汽车主要高压部件介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>08荣威新能源汽车标牌介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>09新能源汽车仪表饰灯介绍</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10比亚迪E6电动汽车部件介绍</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

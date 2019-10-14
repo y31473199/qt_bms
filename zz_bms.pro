@@ -32,7 +32,9 @@ SOURCES += \
     media.cpp \
     login.cpp \
     trouble_code.cpp \
-    score.cpp
+    score.cpp \
+    score_recode.cpp \
+    QRCodeGenerator.cpp
 
 
 HEADERS += \
@@ -41,7 +43,9 @@ HEADERS += \
     media.h \
     login.h \
     trouble_code.h \
-    score.h
+    score.h \
+    score_recode.h \
+    QRCodeGenerator.h
 
 FORMS += \
         mainwindow.ui \
@@ -49,7 +53,8 @@ FORMS += \
     media.ui \
     login.ui \
     trouble_code.ui \
-    score.ui
+    score.ui \
+    score_recode.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -6,6 +6,7 @@
 #include "trouble_code.h"
 #include "score.h"
 #include "login.h"
+#include "score_recode.h"
 #include <QtDebug>
 #include <QSqlQuery>
 #include <QUuid>
@@ -15,25 +16,37 @@
 #include <QMutex>
 #include <QWaitCondition>
 #include <QModbusRtuSerialMaster>
+#include <QPropertyAnimation>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QSize>
 
-QSerialPort *serial;
 fault::fault(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::fault)
+    ui(new Ui::fault),
+    successfulEncoding(false)
 {
     ui->setupUi(this);
+//    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+//     animation->setDuration(500);
+//     animation->setStartValue(0);
+//     animation->setEndValue(1);
+//     animation->start();
     setWindowIcon(QIcon(":/icon/zz.ico"));
     this->setWindowFlag(Qt::FramelessWindowHint);
+//    this->setAttribute(Qt::WA_DeleteOnClose,1);
     Init();
 //    connect(ui->bty_fault_1,SIGNAL(clicked()),this,SLOT(send16("01 05 00 00 FF 00 8C 3A")));
 
 }
 
-const QString con_1_0_open = "01 05 00 00 FF 00 8C 3A";
-const QString con_1_1_open = "01 05 00 01 FF 00 DD FA";
-const QString con_1_2_open = "01 05 00 02 FF 00 2D FA";
-const QString con_1_3_open = "01 05 00 03 FF 00 7C 3A";
-const QString con_1_close = "01 05 00 ff 00 00 fd fa";
+
+
+const QString con_1_0_open = "33 05 00 00 FF 00 88 28";
+const QString con_1_1_open = "33 05 00 01 FF 00 D9 E8";
+const QString con_1_2_open = "33 05 00 02 FF 00 29 E8";
+const QString con_1_3_open = "33 05 00 03 FF 00 78 28";
+const QString con_1_close = "33 05 00 FF 0 00 F9 E8";
 const QString con_2_0_open = "25 05 00 00 FF 00 8A DE";
 const QString con_2_1_open = "25 05 00 01 FF 00 DB 1E";
 const QString con_2_2_open = "25 05 00 02 FF 00 2B 1E";
@@ -150,14 +163,14 @@ const QString con_24_2_open = "24 05 00 02 FF 00 2A CF";
 const QString con_24_3_open = "24 05 00 03 FF 00 7B 0F";
 const QString con_24_close = "24 05 00 FF 00 00 FA CF";
 
-const QString con_bms_open = "02 05 00 00 FF 00 8C 09";
-const QString con_bms_close = "02 05 00 00 00 00 CD F9";
-const QString con_discharge_open = "02 05 00 01 FF 00 DD C9";
-const QString con_discharge_close = "02 05 00 01 00 00 9C 39";
-const QString con_charge_open = "02 05 00 02 FF 00 2D C9";
-const QString con_charge_close = "02 05 00 02 00 00 6C 39";
-const QString con_can_bus_open = "02 05 00 03 FF 00 7C 09";
-const QString con_can_bus_close = "02 05 00 03 00 00 3D F9";
+const QString con_bms_open = "02 05 00 00 00 00 CD F9";
+const QString con_bms_close = "02 05 00 00 FF 00 8C 09";
+const QString con_discharge_open = "02 05 00 01 00 00 9C 39";
+const QString con_discharge_close = "02 05 00 01 FF 00 DD C9";
+const QString con_charge_open = "02 05 00 02 00 00 6C 39";
+const QString con_charge_close = "02 05 00 02 FF 00 2D C9";
+const QString con_can_bus_open = "02 05 00 03 00 00 3D F9";
+const QString con_can_bus_close = "02 05 00 03 FF 00 7C 09";
 
 
 
@@ -260,30 +273,12 @@ bool can_bus_fault = false;
 
 int time_backtime;
 int time_usetime;
-
+int base_time_back;
 //页面初始化
 void fault::Init(){
     timer = new QTimer(this);
     student_score = 0;
-    fault_submit.clear();
     serialConnect();
-//    serial = new QSerialPort;
-
-//    //设置串口名
-//    //Linux
-//        //modbusDevice->setConnectionParameter(QModbusDevice::SerialPortNameParameter, "ttyUSB0");//串口参数
-//    serial->setPortName("ttyUSB0");
-//    //打开串口
-//    serial->open(QIODevice::ReadWrite);
-//    //设置波特率
-//    serial->setBaudRate(9600);
-//    //设置数据位数
-//    serial->setDataBits(QSerialPort::Data8);
-//    //设置奇偶校验
-//    serial->setParity(QSerialPort::NoParity);
-//    //设置停止位
-//    serial->setStopBits(QSerialPort::OneStop);
-
     ui->time_set->setValidator(new QIntValidator(0, 999, this));
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("zz_bms.db");
@@ -291,12 +286,26 @@ void fault::Init(){
     if (db.open()) {
         query.exec(QString("create table score_(name text,score int)"));
         query.clear();
+        query.exec(QString("DROP TABLE IF EXISTS softstate_;"));
+        query.clear();
+        query.exec(QString("create table softstate_(state int)"));
+        query.clear();
+        query.exec(QString("select * from user_ where user_name = 'admin';"));
+       if(!query.next()){
+           query.clear();
+           query.exec(QString("INSERT INTO user_ VALUES('admin', 'admin', 1, 1);"));
+           query.clear();
+       }
         query.exec(QString("select * from login_state"));
         query.last();
         if(query.value(0)=="0"){
+            query.exec(QString("insert into softstate_ values(1)"));
+            query.clear();
+            user = "student";
             query.clear();
             query.exec(QString("select * from fault_"));
             query.last();
+            base_time_back = query.value(6).toInt();
             time_backtime = query.value(6).toInt();
             ui->time_set->hide();
             ui->fault_stat->hide();
@@ -314,6 +323,9 @@ void fault::Init(){
             connect(timer, SIGNAL(timeout()), this, SLOT(showTimelimit()));
             timer->start(1000);
         }else if(query.value(0)=="1"){
+            query.exec(QString("insert into softstate_ values(0)"));
+            query.clear();
+            user = "teacher";
             ui->time_set->show();
             ui->fault_stat->show();
             ui->test_time_title->show();
@@ -352,25 +364,7 @@ void fault::serialConnect(){
 
 //连接PLC
 void fault::modbusPlcConnect(){
-    if (modbusDevice)
-        modbusDevice->disconnectDevice();
-    delete modbusDevice;
-    modbusDevice = nullptr;
-    modbusDevice = new QModbusRtuSerialMaster(this);
-    //Linux
-        //modbusDevice->setConnectionParameter(QModbusDevice::SerialPortNameParameter, "ttyUSB0");//串口参数
-    //Windows
-    modbusDevice->setConnectionParameter(QModbusDevice::SerialPortNameParameter, "ttyUSB0");//串口参数
-    modbusDevice->setConnectionParameter(QModbusDevice::SerialParityParameter,
-        0);//校检方式
-    modbusDevice->setConnectionParameter(QModbusDevice::SerialBaudRateParameter,
-        9600);//波特率
-    modbusDevice->setConnectionParameter(QModbusDevice::SerialDataBitsParameter,
-        8);//数据位数
-    modbusDevice->setConnectionParameter(QModbusDevice::SerialStopBitsParameter,
-        1);//停止位
-    if (!modbusDevice->connectDevice()) {
-    }
+
 }
 
 void fault::showTimelimit()
@@ -408,20 +402,28 @@ void fault::on_closeBtn_clicked()
 //仪表按钮点击事件
 void fault::on_meterBtn_clicked()
 {
-    serial->disconnect();
+//    on_clear_fault_btn_clicked();
+    if(serial){
+        serial->disconnect();
+    }
     delete serial;
-    MainWindow *mw = new MainWindow(this);
+    timer->stop();
+    MainWindow *mw = new MainWindow();
     mw->show();
+    this->close();
 }
 
 
 //媒体按钮点击事件
 void fault::on_mediaBtn_clicked()
 {
+//    on_clear_fault_btn_clicked();
     serial->disconnect();
     delete serial;
-    media *mw = new media(this);
+    timer->stop();
+    media *mw = new media();
     mw->show();
+    this->close();
 }
 
 void fault::on_read_fault_btn_clicked()
@@ -463,6 +465,10 @@ void fault::on_clear_fault_btn_clicked()
     ui->bty_fault_22->setCurrentIndex(0);
     ui->bty_fault_23->setCurrentIndex(0);
     ui->bty_fault_24->setCurrentIndex(0);
+    ui->batin_fault->setCurrentIndex(0);
+    ui->bms_fault->setCurrentIndex(0);
+    ui->can_bus_fault->setCurrentIndex(0);
+    ui->batout_fault->setCurrentIndex(0);
     fault_stat = 0;
     ui->fault_stat->setText(QString("已设置故障:0"));
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -492,15 +498,19 @@ void fault::on_clear_fault_btn_clicked()
     send16(con_13_close);
     send16(con_14_close);
     send16(con_15_close);
-     send16(con_16_close);
-     send16(con_17_close);
-     send16(con_18_close);
-     send16(con_19_close);
-     send16(con_20_close);
-     send16(con_21_close);
-     send16(con_22_close);
-     send16(con_23_close);
-     send16(con_24_close);
+    send16(con_16_close);
+    send16(con_17_close);
+    send16(con_18_close);
+    send16(con_19_close);
+    send16(con_20_close);
+    send16(con_21_close);
+    send16(con_22_close);
+    send16(con_23_close);
+    send16(con_24_close);
+    send16(con_bms_close);
+    send16(con_charge_close);
+    send16(con_can_bus_close);
+    send16(con_discharge_close);
     QMessageBox::about(this, "清除故障", "故障已清除");
 }
 
@@ -531,38 +541,54 @@ void fault::on_data_reset_btn_clicked()
     ui->bty_fault_22->setCurrentIndex(0);
     ui->bty_fault_23->setCurrentIndex(0);
     ui->bty_fault_24->setCurrentIndex(0);
+    ui->batin_fault->setCurrentIndex(0);
+    ui->bms_fault->setCurrentIndex(0);
+    ui->can_bus_fault->setCurrentIndex(0);
+    ui->batout_fault->setCurrentIndex(0);
     fault_stat = 0;
+    student_score = 0;
+    time_backtime = base_time_back;
+    time_usetime = 0;
+    timer->start();
+//    connect(timer, SIGNAL(timeout()), this, SLOT(showTimelimit()));
     ui->fault_stat->setText(QString("已设置故障:0"));
     QMessageBox::about(this, "数据重置", "数据已重置");
 }
 
 void fault::on_background_info_btn_clicked()
 {
-    QMessageBox::about(this, "抱歉", "背景资料功能我们正在拼命实现中");
+//    QMessageBox::about(this, "抱歉", "背景资料功能我们正在拼命实现中");
+    score_recode *sd = new score_recode(this);
+    sd->show();
 }
 
 void  fault::send16(QString str){
-    QByteArray buf;
-        bool ok;
-        char data;
-        QStringList list;
-        list = str.split(" ");
-        for(int i = 0; i < list.count(); i++){
-            if(list.at(i) == " ")
-                continue;
-            if(list.at(i).isEmpty())
-                continue;
-            data = (char)list.at(i).toInt(&ok, 16);
-            buf.append(data);
-        }
-        serial->flush();
-        QMutex mutex;
-        QWaitCondition sleep;
-        mutex.lock();
-        sleep.wait(&mutex, 100);
-        mutex.unlock();
-        serial->write(buf);
+    if(user == "teacher"){
+//        qDebug()<<"教师设置故障";
+        QByteArray buf;
+            bool ok;
+            char data;
+            QStringList list;
+            list = str.split(" ");
+            for(int i = 0; i < list.count(); i++){
+                if(list.at(i) == " ")
+                    continue;
+                if(list.at(i).isEmpty())
+                    continue;
+                data = (char)list.at(i).toInt(&ok, 16);
+                buf.append(data);
+            }
+            serial->flush();
+            QMutex mutex;
+            QWaitCondition sleep;
+            mutex.lock();
+            sleep.wait(&mutex, 100);
+            mutex.unlock();
+            serial->write(buf);
+    }
 }
+QStringList noScoreQrc;
+
 //试题发布
 void fault::on_submit_btn_clicked()
 {
@@ -574,7 +600,7 @@ void fault::on_submit_btn_clicked()
         query.clear();
         query.exec(QString("select * from login_state"));
         query.last();
-        qDebug()<<query.value(0);
+//        qDebug()<<query.value(0);
         if(query.value(0)=="1"){
             //教师设置故障并存储到数据库
             query.clear();
@@ -629,15 +655,18 @@ void fault::on_submit_btn_clicked()
             if(fault_submit.size()==0){
                 QMessageBox::about(this, "操作状态", "您还未答题！");
             }
-            qDebug()<<fault_submit<<"qDebug()<<fault_submit;";
             if (fault_submit.size()>=1) {
                 for(int i = 0;i<6;i++){
-                    qDebug()<<query.value(i)<<"qDebug()<<query.value(i);";
+//                    qDebug()<<query.value(i)<<"qDebug()<<query.value(i);";
                     if(fault_submit.indexOf(query.value(i).toString())!=-1){
                         //有题答对
-                        qDebug()<<"有题答对";
-                        student_score += 20;
+                        student_score += 1;
+                        //学生序号
+
                         fault_score.append(query.value(i).toString());
+                    }else {
+                        QStringList noScore = query.value(i).toString().split(",");
+                        if(noScore.at(0)!="") noScoreQrc.append(noScore.at(0));
                     }
                 }
                 QUuid id = QUuid::createUuid();
@@ -648,10 +677,49 @@ void fault::on_submit_btn_clicked()
                 query.bindValue(":score",student_score);
                 query.exec();
                 db.close();
-                if(!(QMessageBox::information(this,tr("答题成功"),tr("分数已提交至数据库，请确认是否返回登录界面?"),tr("返回"),tr("取消")))){
-                    login *lw = new login(this);
-                    lw->show();
+                timer->stop();
+
+                int levelIndex = 1;
+                int versionIndex = 0;
+                bool bExtent = true;
+                int maskIndex = -1;
+                QString noScor;
+                noScor.clear();
+                foreach(QString s ,noScoreQrc){
+                    noScor.append(s+",");
                 }
+                QString encodeString = "您的分数为："+QString::number(student_score)+"\n您做错的题目为："+noScor+"\n您的考分序列号为："+name_uuid;
+
+                successfulEncoding = qrEncode.EncodeData( levelIndex, versionIndex, bExtent, maskIndex, encodeString.toUtf8().data() );
+                if ( !successfulEncoding )
+                {
+                    //创建失败
+                    return;
+                }
+
+                int qrImageSize = qrEncode.m_nSymbleSize;
+
+                encodeImageSize = qrImageSize + ( QR_MARGIN * 2 );
+                QImage encodeImage( encodeImageSize, encodeImageSize, QImage::Format_Mono );
+                encodeImage.fill( 1 );
+
+                for ( int i = 0; i < qrImageSize; i++ )
+                    for ( int j = 0; j < qrImageSize; j++ )
+                        if ( qrEncode.m_byModuleData[i][j] )
+                            encodeImage.setPixel( i + QR_MARGIN, j + QR_MARGIN, 0 );
+
+                QMessageBox message(QMessageBox::NoIcon, "答题成功", "请扫描这个二维码查看分数！\n然后截图记录");
+                QPixmap scoreQRCodeRes = QPixmap::fromImage( encodeImage );
+                QSize picSize(200,200);
+                QPixmap scoreQRCode = scoreQRCodeRes.scaled(picSize);
+                message.setIconPixmap(QPixmap(scoreQRCode));
+                message.exec();
+
+
+//                if(!(QMessageBox::information(this,tr("答题成功"),tr("分数已提交至数据库，请牢记您的分数序列号！\n分数序列号:"+name_uuid.toLatin1()),tr("返回"),tr("取消")))){
+//                    login *lw = new login(this);
+//                    lw->show();
+//                }
             }
 
         }
@@ -724,37 +792,43 @@ void fault_factory(QString fault_s,int index){
         if(index == 1) sen_code1 = con_1_0_open;
         if(index == 2) sen_code1 = con_1_1_open;
         if(index == 3) sen_code1 = con_1_2_open;
-        if(index == 4) sen_code1 = con_1_3_open;
+        if(index == 5) sen_code1 = con_1_3_open;
+        if(index == 4) sen_code1 = con_1_close;
     }else if (con == 2) {
         if(index == 0) sen_code2 = con_2_close;
         if(index == 1) sen_code2 = con_2_0_open;
         if(index == 2) sen_code2 = con_2_1_open;
         if(index == 3) sen_code2 = con_2_2_open;
-        if(index == 4) sen_code2 = con_2_3_open;
+        if(index == 5) sen_code2 = con_2_3_open;
+        if(index == 4) sen_code2 = con_2_close;
     }else if (con == 3) {
         if(index == 0) sen_code3 = con_3_close;
         if(index == 1) sen_code3 = con_3_0_open;
         if(index == 2) sen_code3 = con_3_1_open;
         if(index == 3) sen_code3 = con_3_2_open;
-        if(index == 4) sen_code3 = con_3_3_open;
+        if(index == 5) sen_code3 = con_3_3_open;
+        if(index == 4) sen_code3 = con_3_close;
     }else if (con == 4) {
         if(index == 0) sen_code4 = con_4_close;
         if(index == 1) sen_code4 = con_4_0_open;
         if(index == 2) sen_code4 = con_4_1_open;
         if(index == 3) sen_code4 = con_4_2_open;
-        if(index == 4) sen_code4 = con_4_3_open;
+        if(index == 5) sen_code4 = con_4_3_open;
+        if(index == 4) sen_code4 = con_4_close;
     }else if (con == 5) {
         if(index == 0) sen_code5 = con_5_close;
         if(index == 1) sen_code5 = con_5_0_open;
         if(index == 2) sen_code5 = con_5_1_open;
         if(index == 3) sen_code5 = con_5_2_open;
-        if(index == 4) sen_code5 = con_5_3_open;
+        if(index == 5) sen_code5 = con_5_3_open;
+        if(index == 4) sen_code5 = con_5_close;
     }else if (con == 6) {
         if(index == 0) sen_code6 = con_6_close;
         if(index == 1) sen_code6 = con_6_0_open;
         if(index == 2) sen_code6 = con_6_1_open;
         if(index == 3) sen_code6 = con_6_2_open;
-        if(index == 4) sen_code6 = con_6_3_open;
+        if(index == 5) sen_code6 = con_6_3_open;
+        if(index == 4) sen_code5 = con_5_close;
     }else if (con == 7) {
         if(index == 0) sen_code7 = con_7_close;
         if(index == 1) sen_code7 = con_7_0_open;
@@ -766,103 +840,120 @@ void fault_factory(QString fault_s,int index){
         if(index == 1) sen_code8 = con_8_0_open;
         if(index == 2) sen_code8 = con_8_1_open;
         if(index == 3) sen_code8 = con_8_2_open;
-        if(index == 4) sen_code8 = con_8_3_open;
+        if(index == 5) sen_code8 = con_8_3_open;
+        if(index == 4) sen_code8 = con_8_close;
     }else if (con == 9) {
         if(index == 0) sen_code9 = con_9_close;
         if(index == 1) sen_code9 = con_9_0_open;
         if(index == 2) sen_code9 = con_9_1_open;
         if(index == 3) sen_code9 = con_9_2_open;
-        if(index == 4) sen_code9 = con_9_3_open;
+        if(index == 5) sen_code9 = con_9_3_open;
+        if(index == 4) sen_code9 = con_9_close;
     }else if (con == 10) {
         if(index == 0) sen_code10 = con_10_close;
         if(index == 1) sen_code10 = con_10_0_open;
         if(index == 2) sen_code10 = con_10_1_open;
         if(index == 3) sen_code10 = con_10_2_open;
-        if(index == 4) sen_code10 = con_10_3_open;
+        if(index == 5) sen_code10 = con_10_3_open;
+        if(index == 4) sen_code10 = con_10_close;
     }else if (con == 11) {
         if(index == 0) sen_code11 = con_11_close;
         if(index == 1) sen_code11 = con_11_0_open;
         if(index == 2) sen_code11 = con_11_1_open;
         if(index == 3) sen_code11 = con_11_2_open;
-        if(index == 4) sen_code11 = con_11_3_open;
+        if(index == 5) sen_code11 = con_11_3_open;
+        if(index == 4) sen_code11 = con_11_close;
     }else if (con == 12) {
         if(index == 0) sen_code12 = con_12_close;
         if(index == 1) sen_code12 = con_12_0_open;
         if(index == 2) sen_code12 = con_12_1_open;
         if(index == 3) sen_code12 = con_12_2_open;
-        if(index == 4) sen_code12 = con_12_3_open;
+        if(index == 5) sen_code12 = con_12_3_open;
+        if(index == 4) sen_code12 = con_12_close;
     }else if (con == 13) {
         if(index == 0) sen_code13 = con_13_close;
         if(index == 1) sen_code13 = con_13_0_open;
         if(index == 2) sen_code13 = con_13_1_open;
         if(index == 3) sen_code13 = con_13_2_open;
-        if(index == 4) sen_code13 = con_13_3_open;
+        if(index == 5) sen_code13 = con_13_3_open;
+        if(index == 4) sen_code13 = con_13_close;
     }else if (con == 14) {
         if(index == 0) sen_code14 = con_14_close;
         if(index == 1) sen_code14 = con_14_0_open;
         if(index == 2) sen_code14 = con_14_1_open;
         if(index == 3) sen_code14 = con_14_2_open;
-        if(index == 4) sen_code14 = con_14_3_open;
+        if(index == 5) sen_code14 = con_14_3_open;
+        if(index == 4) sen_code14 = con_14_close;
     }else if (con == 15) {
         if(index == 0) sen_code15 = con_15_close;
         if(index == 1) sen_code15 = con_15_0_open;
         if(index == 2) sen_code15 = con_15_1_open;
         if(index == 3) sen_code15 = con_15_2_open;
-        if(index == 4) sen_code15 = con_15_3_open;
+        if(index == 5) sen_code15 = con_15_3_open;
+        if(index == 4) sen_code15 = con_15_close;
     }else if (con == 16) {
         if(index == 0) sen_code16 = con_16_close;
         if(index == 1) sen_code16 = con_16_0_open;
         if(index == 2) sen_code16 = con_16_1_open;
         if(index == 3) sen_code16 = con_16_2_open;
-        if(index == 4) sen_code16 = con_16_3_open;
+        if(index == 5) sen_code16 = con_16_3_open;
+        if(index == 4) sen_code16 = con_16_close;
     }else if (con == 17) {
         if(index == 0) sen_code17 = con_17_close;
         if(index == 1) sen_code17 = con_17_0_open;
         if(index == 2) sen_code17 = con_17_1_open;
         if(index == 3) sen_code17 = con_17_2_open;
-        if(index == 4) sen_code17 = con_17_3_open;
+        if(index == 5) sen_code17 = con_17_3_open;
+        if(index == 4) sen_code17 = con_17_close;
     }else if (con == 18) {
         if(index == 0) sen_code18 = con_18_close;
         if(index == 1) sen_code18 = con_18_0_open;
         if(index == 2) sen_code18 = con_18_1_open;
         if(index == 3) sen_code18 = con_18_2_open;
-        if(index == 4) sen_code18 = con_18_3_open;
+        if(index == 5) sen_code18 = con_18_3_open;
+        if(index == 4) sen_code18 = con_18_close;
     }else if (con == 19) {
         if(index == 0) sen_code19 = con_19_close;
         if(index == 1) sen_code19 = con_19_0_open;
         if(index == 2) sen_code19 = con_19_1_open;
         if(index == 3) sen_code19 = con_19_2_open;
-        if(index == 4) sen_code19 = con_19_3_open;
+        if(index == 5) sen_code19 = con_19_3_open;
+        if(index == 4) sen_code19 = con_19_close;
     }else if (con == 20) {
         if(index == 0) sen_code20 = con_20_close;
         if(index == 1) sen_code20 = con_20_0_open;
         if(index == 2) sen_code20 = con_20_1_open;
         if(index == 3) sen_code20 = con_20_2_open;
-        if(index == 4) sen_code20 = con_20_3_open;
+        if(index == 5) sen_code20 = con_20_3_open;
+        if(index == 4) sen_code20 = con_20_close;
     }else if (con == 21) {
         if(index == 0) sen_code21 = con_21_close;
         if(index == 1) sen_code21 = con_21_0_open;
         if(index == 2) sen_code21 = con_21_1_open;
         if(index == 3) sen_code21 = con_21_2_open;
-        if(index == 4) sen_code21 = con_21_3_open;
+        if(index == 5) sen_code21 = con_21_3_open;
+        if(index == 4) sen_code21 = con_21_close;
     }else if (con == 22) {
         if(index == 0) sen_code22 = con_22_close;
         if(index == 1) sen_code22 = con_22_0_open;
         if(index == 2) sen_code22 = con_22_1_open;
         if(index == 3) sen_code22 = con_22_2_open;
-        if(index == 4) sen_code22 = con_22_3_open;
+        if(index == 5) sen_code22 = con_22_3_open;
+        if(index == 4) sen_code22 = con_22_close;
     }else if (con == 23) {
         if(index == 0) sen_code23 = con_23_close;
         if(index == 1) sen_code23 = con_23_0_open;
         if(index == 2) sen_code23 = con_23_1_open;
         if(index == 3) sen_code23 = con_23_2_open;
-        if(index == 4) sen_code23 = con_23_3_open;
+        if(index == 5) sen_code23 = con_23_3_open;
+        if(index == 4) sen_code23 = con_23_close;
     }else if (con == 24) {
         if(index == 0) sen_code24 = con_24_close;
         if(index == 1) sen_code24 = con_24_0_open;
         if(index == 2) sen_code24 = con_24_1_open;
         if(index == 3) sen_code24 = con_24_2_open;
-        if(index == 4) sen_code24 = con_24_3_open;
+        if(index == 5) sen_code24 = con_24_3_open;
+        if(index == 4) sen_code24 = con_24_close;
     }else if (con == 25) {
         if(index == 0) sen_code25 = con_bms_close;
         if(index == 1) sen_code25 = con_bms_open;
@@ -1158,6 +1249,7 @@ void fault::on_bms_fault_activated(int index)
     fault_factory("25,",index);
     send16(con_bms_close);
     send16(sen_code25);
+    bms_fault_index = index;
     ui->fault_stat->setText(QString("已设置故障:%1").arg(fault_stat));
 
 }
@@ -1168,6 +1260,7 @@ void fault::on_batout_fault_activated(int index)
     fault_factory("26,",index);
     send16(con_discharge_close);
     send16(sen_code26);
+    batout_fault_index = index;
     ui->fault_stat->setText(QString("已设置故障:%1").arg(fault_stat));
 }
 
@@ -1177,6 +1270,7 @@ void fault::on_batin_fault_activated(int index)
     fault_factory("27,",index);
     send16(con_charge_close);
     send16(sen_code27);
+    batin_fault_index = index;
     ui->fault_stat->setText(QString("已设置故障:%1").arg(fault_stat));
 }
 
@@ -1186,5 +1280,11 @@ void fault::on_can_bus_fault_activated(int index)
     fault_factory("28,",index);
     send16(con_can_bus_close);
     send16(sen_code28);
+    can_bus_fault_index = index;
     ui->fault_stat->setText(QString("已设置故障:%1").arg(fault_stat));
+}
+
+void fault::on_set_fault_btn_clicked()
+{
+    on_data_reset_btn_clicked();
 }

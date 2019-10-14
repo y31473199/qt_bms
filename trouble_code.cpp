@@ -5,12 +5,18 @@
 #include "QMessageBox"
 #include <QtDebug>
 #include "fault.h"
+#include <QPropertyAnimation>
 
 trouble_code::trouble_code(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::trouble_code)
 {
     ui->setupUi(this);
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+     animation->setDuration(500);
+     animation->setStartValue(0);
+     animation->setEndValue(1);
+     animation->start();
     this->setWindowFlag(Qt::FramelessWindowHint);
     setWindowIcon(QIcon(":/icon/zz.ico"));
     Init();
@@ -139,52 +145,113 @@ void trouble_code::Init(){
             fault_index_5 = fault_5.split(",");
             fault_index_6 = fault_6.split(",");
             if(fault_index_1.at(0) != ""){
-                if(fault_index_1.at(1)=="1") strList.append("第"+fault_index_1.at(0)+"串电池：过放！");
-                else if(fault_index_1.at(1)=="2") strList.append("第"+fault_index_1.at(0)+"串电池：漏电！");
-                else if(fault_index_1.at(1)=="3") strList.append("第"+fault_index_1.at(0)+"串电池：高温！");
-                else if(fault_index_1.at(1)=="4") strList.append("第"+fault_index_1.at(0)+"串电池：短路！");
-                else if(fault_index_1.at(1)=="5") strList.append("第"+fault_index_1.at(0)+"串电池：断路！");
                 fault_code.append("ZZFC"+fault_index_1.at(0)+"ap"+fault_index_1.at(1));
+                if(fault_index_1.at(0) == "25"){
+                    if(fault_index_1.at(1)=="1") strList.append("BMS电源断路！");
+                }else if(fault_index_1.at(0) == "26"){
+                    if(fault_index_1.at(1)=="1") strList.append("放电继电器断路！");
+                }else if(fault_index_1.at(0) == "27"){
+                    if(fault_index_1.at(1)=="1") strList.append("充电继电器断路！");
+                }else if(fault_index_1.at(0) == "28"){
+                    if(fault_index_1.at(1)=="1") strList.append("can线断路！");
+                }else{
+                    if(fault_index_1.at(1)=="1") strList.append("第"+fault_index_1.at(0)+"串电池：过充！");
+                    else if(fault_index_1.at(1)=="2") strList.append("第"+fault_index_1.at(0)+"串电池：过放！");
+                    else if(fault_index_1.at(1)=="3") strList.append("第"+fault_index_1.at(0)+"串电池：漏电！");
+                    else if(fault_index_1.at(1)=="4") strList.append("第"+fault_index_1.at(0)+"串电池：高温！");
+                    else if(fault_index_1.at(1)=="5") strList.append("第"+fault_index_1.at(0)+"串电池：断路！");
+                }
+
             }
             if(fault_index_2.at(0) != ""){
-                if(fault_index_2.at(1)=="1") strList.append("第"+fault_index_2.at(0)+"串电池：过放！");
-                else if(fault_index_2.at(1)=="2") strList.append("第"+fault_index_2.at(0)+"串电池：漏电！");
-                else if(fault_index_2.at(1)=="3") strList.append("第"+fault_index_2.at(0)+"串电池：高温！");
-                else if(fault_index_2.at(1)=="4") strList.append("第"+fault_index_2.at(0)+"串电池：短路！");
-                else if(fault_index_2.at(1)=="5") strList.append("第"+fault_index_2.at(0)+"串电池：断路！");
                 fault_code.append("ZZFC"+fault_index_2.at(0)+"ap"+fault_index_2.at(1));
+                if(fault_index_2.at(0) == "25"){
+                    if(fault_index_2.at(1)=="1") strList.append("BMS电源断路！");
+                }else if(fault_index_2.at(0) == "26"){
+                    if(fault_index_2.at(1)=="1") strList.append("放电继电器断路！");
+                }else if(fault_index_2.at(0) == "27"){
+                    if(fault_index_2.at(1)=="1") strList.append("充电继电器断路！");
+                }else if(fault_index_2.at(0) == "28"){
+                    if(fault_index_2.at(1)=="1") strList.append("can线断路！");
+                }else {
+                if(fault_index_2.at(1)=="1") strList.append("第"+fault_index_2.at(0)+"串电池：过充！");
+                else if(fault_index_2.at(1)=="2") strList.append("第"+fault_index_2.at(0)+"串电池：过放！");
+                else if(fault_index_2.at(1)=="3") strList.append("第"+fault_index_2.at(0)+"串电池：漏电！");
+                else if(fault_index_2.at(1)=="4") strList.append("第"+fault_index_2.at(0)+"串电池：高温！");
+                else if(fault_index_2.at(1)=="5") strList.append("第"+fault_index_2.at(0)+"串电池：断路！");
+                }
             }
             if(fault_index_3.at(0) != ""){
-                if(fault_index_3.at(1)=="1") strList.append("第"+fault_index_3.at(0)+"串电池：过放！");
-                else if(fault_index_3.at(1)=="2") strList.append("第"+fault_index_3.at(0)+"串电池：漏电！");
-                else if(fault_index_3.at(1)=="3") strList.append("第"+fault_index_3.at(0)+"串电池：高温！");
-                else if(fault_index_3.at(1)=="4") strList.append("第"+fault_index_3.at(0)+"串电池：短路！");
-                else if(fault_index_3.at(1)=="5") strList.append("第"+fault_index_3.at(0)+"串电池：断路！");
                 fault_code.append("ZZFC"+fault_index_3.at(0)+"ap"+fault_index_3.at(1));
+                if(fault_index_3.at(0) == "25"){
+                    if(fault_index_3.at(1)=="1") strList.append("BMS电源断路！");
+                }else if(fault_index_3.at(0) == "26"){
+                    if(fault_index_3.at(1)=="1") strList.append("放电继电器断路！");
+                }else if(fault_index_3.at(0) == "27"){
+                    if(fault_index_3.at(1)=="1") strList.append("充电继电器断路！");
+                }else if(fault_index_3.at(0) == "28"){
+                    if(fault_index_3.at(1)=="1") strList.append("can线断路！");
+                }else{
+                if(fault_index_3.at(1)=="1") strList.append("第"+fault_index_3.at(0)+"串电池：过充！");
+                else if(fault_index_3.at(1)=="2") strList.append("第"+fault_index_3.at(0)+"串电池：过放！");
+                else if(fault_index_3.at(1)=="3") strList.append("第"+fault_index_3.at(0)+"串电池：漏电！");
+                else if(fault_index_3.at(1)=="4") strList.append("第"+fault_index_3.at(0)+"串电池：高温！");
+                else if(fault_index_3.at(1)=="5") strList.append("第"+fault_index_3.at(0)+"串电池：断路！");
+                }
             }
             if(fault_index_4.at(0) != ""){
-                if(fault_index_4.at(1)=="1") strList.append("第"+fault_index_4.at(0)+"串电池：过放！");
-                else if(fault_index_4.at(1)=="2") strList.append("第"+fault_index_4.at(0)+"串电池：漏电！");
-                else if(fault_index_4.at(1)=="3") strList.append("第"+fault_index_4.at(0)+"串电池：高温！");
-                else if(fault_index_4.at(1)=="4") strList.append("第"+fault_index_4.at(0)+"串电池：短路！");
-                else if(fault_index_4.at(1)=="5") strList.append("第"+fault_index_4.at(0)+"串电池：断路！");
                 fault_code.append("ZZFC"+fault_index_4.at(0)+"ap"+fault_index_4.at(1));
+                if(fault_index_4.at(0) == "25"){
+                    if(fault_index_4.at(1)=="1") strList.append("BMS电源断路！");
+                }else if(fault_index_4.at(0) == "26"){
+                    if(fault_index_4.at(1)=="1") strList.append("放电继电器断路！");
+                }else if(fault_index_4.at(0) == "27"){
+                    if(fault_index_4.at(1)=="1") strList.append("充电继电器断路！");
+                }else if(fault_index_4.at(0) == "28"){
+                    if(fault_index_4.at(1)=="1") strList.append("can线断路！");
+                }else{
+                if(fault_index_4.at(1)=="1") strList.append("第"+fault_index_4.at(0)+"串电池：过充！");
+                else if(fault_index_4.at(1)=="2") strList.append("第"+fault_index_4.at(0)+"串电池：过放！");
+                else if(fault_index_4.at(1)=="3") strList.append("第"+fault_index_4.at(0)+"串电池：漏电！");
+                else if(fault_index_4.at(1)=="4") strList.append("第"+fault_index_4.at(0)+"串电池：高温！");
+                else if(fault_index_4.at(1)=="5") strList.append("第"+fault_index_4.at(0)+"串电池：断路！");
+                }
             }
             if(fault_index_5.at(0) != ""){
-                if(fault_index_5.at(1)=="1") strList.append("第"+fault_index_5.at(0)+"串电池：过放！");
-                else if(fault_index_5.at(1)=="2") strList.append("第"+fault_index_5.at(0)+"串电池：漏电！");
-                else if(fault_index_5.at(1)=="3") strList.append("第"+fault_index_5.at(0)+"串电池：高温！");
-                else if(fault_index_5.at(1)=="4") strList.append("第"+fault_index_5.at(0)+"串电池：短路！");
-                else if(fault_index_5.at(1)=="5") strList.append("第"+fault_index_5.at(0)+"串电池：断路！");
                 fault_code.append("ZZFC"+fault_index_5.at(0)+"ap"+fault_index_5.at(1));
+                if(fault_index_5.at(0) == "25"){
+                    if(fault_index_5.at(1)=="1") strList.append("BMS电源断路！");
+                }else if(fault_index_5.at(0) == "26"){
+                    if(fault_index_5.at(1)=="1") strList.append("放电继电器断路！");
+                }else if(fault_index_5.at(0) == "27"){
+                    if(fault_index_5.at(1)=="1") strList.append("充电继电器断路！");
+                }else if(fault_index_5.at(0) == "28"){
+                    if(fault_index_5.at(1)=="1") strList.append("can线断路！");
+                }else{
+                if(fault_index_5.at(1)=="1") strList.append("第"+fault_index_5.at(0)+"串电池：过充！");
+                else if(fault_index_5.at(1)=="2") strList.append("第"+fault_index_5.at(0)+"串电池：过放！");
+                else if(fault_index_5.at(1)=="3") strList.append("第"+fault_index_5.at(0)+"串电池：漏电！");
+                else if(fault_index_5.at(1)=="4") strList.append("第"+fault_index_5.at(0)+"串电池：高温！");
+                else if(fault_index_5.at(1)=="5") strList.append("第"+fault_index_5.at(0)+"串电池：断路！");
+                }
             }
             if(fault_index_6.at(0) != ""){
-                if(fault_index_6.at(1)=="1") strList.append("第"+fault_index_6.at(0)+"串电池：过放！");
-                else if(fault_index_6.at(1)=="2") strList.append("第"+fault_index_6.at(0)+"串电池：漏电！");
-                else if(fault_index_6.at(1)=="3") strList.append("第"+fault_index_6.at(0)+"串电池：高温！");
-                else if(fault_index_6.at(1)=="4") strList.append("第"+fault_index_6.at(0)+"串电池：短路！");
-                else if(fault_index_6.at(1)=="5") strList.append("第"+fault_index_6.at(0)+"串电池：断路！");
                 fault_code.append("ZZFC"+fault_index_6.at(0)+"ap"+fault_index_6.at(1));
+                if(fault_index_6.at(0) == "25"){
+                    if(fault_index_6.at(1)=="1") strList.append("BMS电源断路！");
+                }else if(fault_index_6.at(0) == "26"){
+                    if(fault_index_6.at(1)=="1") strList.append("放电继电器断路！");
+                }else if(fault_index_6.at(0) == "27"){
+                    if(fault_index_6.at(1)=="1") strList.append("充电继电器断路！");
+                }else if(fault_index_6.at(0) == "28"){
+                    if(fault_index_6.at(1)=="1") strList.append("can线断路！");
+                }else{
+                if(fault_index_6.at(1)=="1") strList.append("第"+fault_index_6.at(0)+"串电池：过充！");
+                else if(fault_index_6.at(1)=="2") strList.append("第"+fault_index_6.at(0)+"串电池：过放！");
+                else if(fault_index_6.at(1)=="3") strList.append("第"+fault_index_6.at(0)+"串电池：漏电！");
+                else if(fault_index_6.at(1)=="4") strList.append("第"+fault_index_6.at(0)+"串电池：高温！");
+                else if(fault_index_6.at(1)=="5") strList.append("第"+fault_index_6.at(0)+"串电池：断路！");
+                }
             }
             query.clear();
             int nCount = strList.size();

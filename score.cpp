@@ -5,6 +5,7 @@
 #include "QMessageBox"
 #include <QStandardItemModel>
 #include <QtDebug>
+#include <QPropertyAnimation>
 
 QStringList student_name;
 QStringList score_detials;
@@ -14,6 +15,11 @@ score::score(QWidget *parent) :
     ui(new Ui::score)
 {
     ui->setupUi(this);
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+     animation->setDuration(500);
+     animation->setStartValue(0);
+     animation->setEndValue(1);
+     animation->start();
     setWindowIcon(QIcon(":/icon/zz.ico"));
     this->setWindowFlag(Qt::FramelessWindowHint);
     fault_modle = new QStandardItemModel(this);

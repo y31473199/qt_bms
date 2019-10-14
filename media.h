@@ -45,6 +45,8 @@ private slots:
 
     void on_seek_sliderPressed();
 
+    void onShowAnimationEnd();
+
 private:
     Ui::media *ui;
     QProcess *playProcess;

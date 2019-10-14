@@ -18,6 +18,9 @@
         <file>voltage_btn.png</file>
         <file>temper_btn_pushed.png</file>
         <file>temper_btn.png</file>
+        <file>flaut_pressed.png</file>
+        <file>home_pressed.png</file>
+        <file>media_pressed.png</file>
     </qresource>
     <qresource prefix="/background">
         <file>loginbackground.png</file>

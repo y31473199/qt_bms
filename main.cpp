@@ -3,10 +3,11 @@
 #include "qsplashscreen.h"
 #include "QtDebug"
 #include <QProcess>
+#include <QModbusDataUnit>
+
 
 int main(int argc, char *argv[])
 {
-
     QString cpu_id = "";
     QProcess p(0);
     p.start("wmic CPU get ProcessorID");    p.waitForStarted();

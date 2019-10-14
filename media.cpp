@@ -6,6 +6,7 @@
 #include "QtDebug"
 #include "QDir"
 #include "login.h"
+#include <QPropertyAnimation>
 
 
 media::media(QWidget *parent) :
@@ -14,18 +15,33 @@ media::media(QWidget *parent) :
 {
 
     ui->setupUi(this);
+    //过渡动画
+    this->setWindowFlag(Qt::FramelessWindowHint);
     setWindowIcon(QIcon(":/icon/zz.ico"));
-    Init();
-    timeClock = new QTimer(this);
-    connect(timeClock,SIGNAL(timeout()),this,SLOT(timeDone()));  //定时更新视频进度条
+//    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+//     animation->setDuration(500);
+//     animation->setStartValue(0);
+//     animation->setEndValue(1);
+//     animation->start();
+//     connect(animation,SIGNAL(finished()),this,SLOT(onShowAnimationEnd()));  //定时更新视频进度条
+     Init();
+     timeClock = new QTimer(this);
+     connect(timeClock,SIGNAL(timeout()),this,SLOT(timeDone()));  //定时更新视频进度条
+     qDebug()<<"media.widget";
 
 }
 
 media::~media()
 {
     delete ui;
+
 }
 bool on_off_slider;
+
+void media::onShowAnimationEnd(){
+
+
+}
 
 //窗口初始化
 void media::Init(){
@@ -33,7 +49,7 @@ void media::Init(){
     //linux
 //    QDir dir("/home/alan/Videos/");
     //Windows
-    QDir dir("C:/Users/user/Videos/");
+    QDir dir("C:/Users/Public/Videos/");
     QStringList nameFilters;
     nameFilters << "*.avi" << "*.wav" << "*.mp4";
     playList = dir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -87,8 +103,9 @@ void media::on_closeBtn_clicked()
 void media::on_meterBtn_clicked()
 {
     playProcess->close();
-    MainWindow *mw = new MainWindow(this);
+    MainWindow *mw = new MainWindow();
     mw->show();
+    this->close();
 }
 
 //故障按钮点击事件
@@ -103,11 +120,13 @@ void media::on_faultBtn_clicked()
         query.exec(QString("select * from login_state"));
         query.last();
         if(query.value(0)!="2"){
-            fault *fw = new fault(this);
+            fault *fw = new fault();
             fw->show();
+            this->close();
         }else {
-            login *lw = new login(this);
+            login *lw = new login();
             lw->show();
+            this->close();
         }
     }
     QSqlDatabase::removeDatabase("zz_bms.db");
@@ -117,7 +136,6 @@ void media::on_faultBtn_clicked()
 //播放按钮点击事件
 void media::on_playBtn_clicked()
 {
-    qDebug()<<isPlaying;
     if(isPlaying == 0){ //stop>>Neverplay
         return;
     }else if (isPlaying == 1) { //play>>stop
@@ -140,8 +158,8 @@ void media::playVideo(const QString fileName){
     //linux_mplayer
 //    QString videoPath = "/home/alan/Videos/" + fileName;
 //    QString programe = "/usr/bin/mplayer";
-    QString videoPath = "C:/Users/user/Videos/" + fileName;
-    QString programe = "C:/Mplayer/mplayer.exe";
+    QString videoPath = "C:/Users/Public/Videos/" + fileName;
+    QString programe = "C:/Users/Public/Videos/Mplayer/Mplayer.exe";
     QStringList  arguments;
     arguments << videoPath;
     arguments << "-slave";

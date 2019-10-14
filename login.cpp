@@ -6,6 +6,7 @@
 #include "mainwindow.h"
 #include "qmessagebox.h"
 #include <QSqlQuery>
+#include <QPropertyAnimation>
 
 login::login(QWidget *parent) :
     QWidget(parent),
@@ -13,8 +14,14 @@ login::login(QWidget *parent) :
 
 {
     ui->setupUi(this);
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+     animation->setDuration(500);
+     animation->setStartValue(0);
+     animation->setEndValue(1);
+     animation->start();
     this->setWindowFlag(Qt::FramelessWindowHint);
     setWindowIcon(QIcon(":/icon/zz.ico"));
+//    this->setAttribute(Qt::WA_DeleteOnClose,1);
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
      db.setDatabaseName("zz_bms.db");
      QSqlQuery query(db);
@@ -56,8 +63,9 @@ void login::on_submit_clicked()
             query.exec(QString("insert into login_state values('1')"));
             query.clear();
             db.close();
-            fault *fw = new fault(this);
+            fault *fw = new fault();
             fw->show();
+            this->close();
             //发送用户类型
         }else {
             QMessageBox::about(this, "登录失败", "账号或密码错误");
@@ -70,14 +78,16 @@ void login::on_submit_clicked()
 
 void login::on_mediaBtn_clicked()
 {
-    media *mw = new media(this);
+    media *mw = new media();
     mw->show();
+    this->close();
 }
 
 void login::on_meterBtn_clicked()
 {
-    MainWindow *mw = new MainWindow(this);
+    MainWindow *mw = new MainWindow();
     mw->show();
+    this->close();
 }
 
 void login::on_closeBtn_clicked()
